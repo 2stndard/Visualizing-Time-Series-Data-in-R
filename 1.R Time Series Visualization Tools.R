@@ -302,3 +302,5 @@ citi <- paste0("Citigroup div of $0.16 on 13 Nov. 2016")
 
 # Create the legend in the bottom right corner
 legend(x = 'bottomright', legend = c(micro, citi), col = c('black', 'orange'), lty = c(1, 1))
+
+

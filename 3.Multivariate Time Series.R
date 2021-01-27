@@ -118,7 +118,7 @@ pairs(data, lower.panel = NULL)
 # Display only the upper triangle of the correlation matrix using numbers
 
 library(corrplot)
-cor_mat <- as.matrix(data[,-1])
+cor_mat <- cor(data[,-1])
 
 # Create correlation matrix
 corrplot(cor_mat)
@@ -133,3 +133,47 @@ corrplot(cor_mat, method = 'color')
 
 # Create upper triangle correlation matrix
 corrplot(cor_mat, method = 'number', type = 'upper')
+
+
+
+# Exercise
+# Correlation matrix as heatmap
+# Should you want to check correlations betweens hundreds of time series, representing correlations with numbers is not really helpful - for a dataset of 100 elements, you would have to analyze 10,000 (100 x 100) correlation numbers!
+#   
+#   In this case, a heatmap is a better suited tool. A heatmap is a map or diagram in which data values are represented as colors. When using one, it might also be useful to reorder the corelation matrix to make it more readable. You can create heatmaps using corrplot(method = "color").
+# 
+# In this exercise, you will create some heatmaps with the same correlation matrix cor_mat as from the previous exercise.
+# 
+# Instructions
+# 100 XP
+# Draw a heatmap of cor_mat
+# Draw the upper heatmap
+# Draw the upper heatmap ordering the matrix using hclust in the order argument
+
+
+# Draw heatmap of cor_mat
+corrplot(cor_mat, method = 'color')
+
+# Draw upper heatmap
+corrplot(cor_mat, method = 'color', type = 'upper')
+
+# Draw the upper heatmap with hclust
+corrplot(cor_mat, method = 'color', type = 'upper', order = 'hclust')
+
+
+
+# Exercise
+# Wrap up quiz
+# Which of the following statements is true?
+#   
+#   Instructions
+# 50 XP
+# Possible Answers
+# 
+# Scatter plots are used to evaluate bivariate relationships, and heatmaps are used to identify significant relationships when dealing with numerous variables   <- answer
+# 
+# Heatmaps are used to evaluate bivariate relationships, and scatterplots are used to identify significant relationships when dealing with numerous variables
+# 
+# Scatter plots are used to evaluate bivariate relationships, and the correlation matrix is a visual representation of multivariate relationships
+
+
